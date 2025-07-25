@@ -34,7 +34,7 @@ export default function Mytechstack() {
   return (
     <div className='flex justify-center py-10'>
       <div className='flex gap-6 items-center flex-wrap'>
-        <h1 className='text-xl font-bold text-gray-800'>My Tech Stack</h1>
+        <h1 className='text-xl font-bold text-white'>My Tech Stack</h1>
 
         {icons.map(({ Icon, color }, index) => (
           <motion.div

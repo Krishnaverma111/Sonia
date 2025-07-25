@@ -1,8 +1,8 @@
 import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { IoLogoLinkedin } from "react-icons/io5";
-import logo from "../../assets/images/soniya..png";
-// import PdfFile from "../../assets/pdf/krishna Resume.pdf";
+import logo from "../../assets/images/soniya..jpg";
+import PdfFile from "../../assets/pdf/sonia's Resume.pdf";
 
 export default function Hero() {
 
@@ -10,7 +10,7 @@ export default function Hero() {
   const handleDownload = () => {
     const link = document.createElement('a');
     link.href = PdfFile;
-    link.download = 'Krishna.pdf';
+    link.download = 'sonia.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -75,8 +75,13 @@ export default function Hero() {
 
 
       <div className='w-full md:w-1/2 flex justify-center'>
-        <img className='w-64 sm:w-80 md:w-[400px] h-auto object-contain rounded-lg' src={logo} alt="Krishna Verma" />
+        <img
+          className='w-48 sm:w-64 md:w-80 lg:w-96 h-auto object-cover rounded-xl shadow-lg'
+          src={logo}
+          alt="Sonia Kaushik"
+        />
       </div>
+
     </div>
   );
 }
