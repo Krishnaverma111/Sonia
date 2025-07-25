@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Element } from 'react-scroll';
+import { motion } from 'framer-motion';
 
 export default function AboutMe() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -8,11 +9,34 @@ export default function AboutMe() {
     setIsSubmitted(true);
   };
 
+  // Animation variants
+  const leftFadeVariant = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8 } }
+  };
+
+  const rightFadeVariant = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8 } }
+  };
+
+  const successVariant = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 200 } }
+  };
+
   return (
     <Element name='Contact'>
-      <div className="flex flex-wrap justify-around items-start p-6 gap-6 min-h-screen">
+      <div className="flex flex-wrap justify-around items-start p-6 gap-6 min-h-screen bg-transparent">
+
         {/* About Section */}
-        <div className="max-w-md">
+        <motion.div
+          className="max-w-md"
+          variants={leftFadeVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           <h1 className="text-3xl font-semibold mb-4 text-white">
             About <span className="text-blue-400">Me</span>
           </h1>
@@ -22,11 +46,17 @@ export default function AboutMe() {
             Known for strong communication skills, discipline, and the ability to manage front-desk operations efficiently.
             Eager to grow in a dynamic environment and continuously learn new skills for future opportunities.
           </p>
-        </div>
+        </motion.div>
 
         {/* Contact Form */}
-        <div className="shadow-md rounded-md p-6 w-full max-w-md">
-          <h2 className="font-bold text-xl mb-4">Let's Connect!</h2>
+        <motion.div
+          className="shadow-md rounded-md p-6 w-full max-w-md bg-[rgb(40,40,80)]"
+          variants={rightFadeVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <h2 className="font-bold text-xl mb-4 text-white">Let's Connect!</h2>
 
           <form
             action="https://formsubmit.co/soniasharmagcalewa@gmail.com"
@@ -48,20 +78,20 @@ export default function AboutMe() {
               name="name"
               placeholder="Your Name"
               required
-              className="p-3 border rounded text-gray-700 bg-white"
+              className="p-3 border border-gray-500 rounded bg-gray-800 text-white placeholder-gray-400"
             />
             <input
               type="email"
               name="email"
               placeholder="Your Email"
               required
-              className="p-3 border rounded text-gray-700 bg-white"
+              className="p-3 border border-gray-500 rounded bg-gray-800 text-white placeholder-gray-400"
             />
             <textarea
               name="message"
               placeholder="Your Message"
               required
-              className="p-3 border rounded h-32 text-gray-700 bg-white"
+              className="p-3 border border-gray-500 rounded h-32 bg-gray-800 text-white placeholder-gray-400"
             ></textarea>
 
             <button
@@ -72,12 +102,17 @@ export default function AboutMe() {
             </button>
 
             {isSubmitted && (
-              <p className="text-green-600 font-semibold mt-2">
+              <motion.p
+                className="text-green-400 font-semibold mt-2"
+                variants={successVariant}
+                initial="hidden"
+                animate="visible"
+              >
                 ✅ Message Sent Successfully!
-              </p>
+              </motion.p>
             )}
           </form>
-        </div>
+        </motion.div>
       </div>
     </Element>
   );

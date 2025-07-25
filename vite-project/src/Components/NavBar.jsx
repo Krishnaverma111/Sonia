@@ -13,7 +13,7 @@ export default function NavBar() {
   const navmenu = [
     { href: "about", name: "About" },
     { href: "skill", name: "Skill" },
-    { href: "contact", name: "Contact" },
+    { href: "Contact", name: "Contact" },
   ];
 
   const menuVariants = {
