@@ -54,7 +54,7 @@ export default function Hero() {
 
 
         <h1 className='text-3xl sm:text-4xl font-bold'>Hey, I Am</h1>
-        <h1 className='text-4xl sm:text-5xl font-extrabold text-fuchsia-700'>sonia Kaushik</h1>
+        <h1 className='text-4xl sm:text-5xl font-extrabold text-fuchsia-700'>Sonia Kaushik</h1>
 
         <p className='text-base sm:text-lg text-white'>
           I have 1 year of professional experience as an Auditor at Amazon, with a strong focus on quality assurance, data accuracy, and process improvement. Currently, I am working in a respected position at Hartron Skill Center in Assandh.
