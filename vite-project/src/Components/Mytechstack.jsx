@@ -32,22 +32,23 @@ export default function Mytechstack() {
   ];
 
   return (
-    <div className='flex justify-center py-10'>
-      <div className='flex gap-6 items-center flex-wrap'>
-        <h1 className='text-xl font-bold text-white'>My Tech Stack</h1>
-
-        {icons.map(({ Icon, color }, index) => (
-          <motion.div
-            key={index}
-            custom={index}
-            initial="hidden"
-            animate="visible"
-            whileHover="hover"
-            variants={iconVariants}
-          >
-            <Icon className={`text-5xl ${color} cursor-pointer`} />
-          </motion.div>
-        ))}
+    <div className='flex justify-center py-10 px-4'>
+      <div className='w-full max-w-3xl'>
+        <h1 className='text-xl font-bold text-white text-center mb-6'>My Tech Stack</h1>
+        <div className='flex justify-center flex-wrap gap-6'>
+          {icons.map(({ Icon, color }, index) => (
+            <motion.div
+              key={index}
+              custom={index}
+              initial="hidden"
+              animate="visible"
+              whileHover="hover"
+              variants={iconVariants}
+            >
+              <Icon className={`text-5xl ${color} cursor-pointer`} />
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );
